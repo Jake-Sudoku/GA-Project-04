@@ -19,8 +19,8 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 with st.sidebar:
-    choose = option_menu("Overall", ["About", "Slides", "Interactive"],
-                         icons=['house', 'people', 'file earmark slides', 'bar chart'],
+    choose = option_menu(["About", "Slides", "Interactive"],
+                         icons=['people', 'file earmark slides', 'bar chart'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
         "container": {"padding": "5!important", "background-color": "#fafafa"},
@@ -29,19 +29,6 @@ with st.sidebar:
         "nav-link-selected": {"background-color": "#02ab21"},
     }
     )
-
-#The "Overall" page
-if choose == "Overall":
-    col1 = st.columns( [0.8])
-    with col1:               # To display the header text using css style
-        st.markdown(""" <style> .font {
-        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
-        </style> """, unsafe_allow_html=True)
-        st.markdown('<p class="font">Overall about this project</p>', unsafe_allow_html=True)    
-
-    
-    st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \nIt consist of the following sections : \n\nAbout \n\nSlides \n\nInteractive")    
-    st.image(profile, width=700 )
 
 #The "About" page
 elif choose == "About":
