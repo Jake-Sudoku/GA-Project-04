@@ -66,10 +66,10 @@ elif choose == "Interactive":
     @st.cache
     # Load data
     def data_train(): 
-        df = pd.read_csv('./train_cleaned.csv')
+        df = pd.read_csv('train_cleaned.csv')
         return df
     def data_spray(): 
-        df = pd.read_csv('./spray_cleaned.csv')
+        df = pd.read_csv('spray_cleaned.csv')
         return df
 
     df_train=data_train()
