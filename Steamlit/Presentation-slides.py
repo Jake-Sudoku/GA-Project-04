@@ -8,7 +8,7 @@ import time
 import plotly.express as px
 from plotly.offline import iplot
 from  PIL import Image
-#import cv2
+import cv2
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
