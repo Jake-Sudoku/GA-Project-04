@@ -49,7 +49,7 @@ elif choose == "About":
     </style> """, unsafe_allow_html=True)
     st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
     st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \nIt consist of the following sections below : \n\nAbout \n\nSlides \n\nInteractive")    
-    st.image(profile, width=700 )
+    #st.image(profile, width=700 )
 
 #The "Slides" page
 elif choose == "Slides":
