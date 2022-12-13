@@ -63,7 +63,7 @@ elif choose == "Slides":
 
 
 elif choose == "Interactive":
-    
+    @st.cache
     # Load data
     def data_train(): 
         df = pd.read_csv('./train_cleaned.csv')
