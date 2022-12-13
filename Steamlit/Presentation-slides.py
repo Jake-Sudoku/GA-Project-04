@@ -44,13 +44,11 @@ if choose == "Overall":
 
 #The "About" page
 elif choose == "About":
-    col1 = st.columns( [0.8])
-    with col1:               # To display the header text using css style
-        st.markdown(""" <style> .font {
-        font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
-        </style> """, unsafe_allow_html=True)
-        st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
-        st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \nIt consist of the following sections below : \n\nAbout \n\nSlides \n\nInteractive")    
+    st.markdown(""" <style> .font {
+    font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
+    </style> """, unsafe_allow_html=True)
+    st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
+    st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \nIt consist of the following sections below : \n\nAbout \n\nSlides \n\nInteractive")    
     st.image(profile, width=700 )
 
 #The "Slides" page
