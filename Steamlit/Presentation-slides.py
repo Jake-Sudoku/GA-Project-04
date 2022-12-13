@@ -20,7 +20,7 @@ st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 with st.sidebar:
     choose = option_menu("Directory",[ "About","Slides", "Interactive"],
-                         icons=['people', 'file earmark slides', 'bar chart'],
+                         icons=['people', 'file earmark slides', 'bar-chart'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
         "container": {"padding": "5!important", "background-color": "#fafafa"},
