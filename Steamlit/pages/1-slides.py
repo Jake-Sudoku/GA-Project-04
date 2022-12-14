@@ -12,11 +12,18 @@ import cv2
 import io
 import base64
 
+st.set_page_config(page_title='Slidess', page_icon='🌷', layout='wide', initial_sidebar_state='expanded')
+
+# Set title of the app
+st.title('🌷 Slides')
+
 #The "Slides" page
 def show_pdf(file_path):
     with open(file_path,"rb") as f:
         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
         pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
+        
+        # Displaying File
         st.markdown(pdf_display, unsafe_allow_html=True)
         
         show_pdf('test-GA-Project-4.pdf')
