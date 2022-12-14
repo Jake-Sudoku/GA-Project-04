@@ -12,6 +12,11 @@ import cv2
 import io
 import base64
 
+st.set_page_config(page_title='Interactive', page_icon='🌷', layout='wide', initial_sidebar_state='expanded')
+
+# Set title of the app
+st.title('🌷 Interactive')
+
 # Load data
 df_train = pd.read_csv('train_cleaned.csv')
 df_spray= pd.read_csv('spray_cleaned.csv')
