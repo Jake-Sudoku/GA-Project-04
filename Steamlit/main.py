@@ -54,7 +54,7 @@ elif choose == "Interactive":
     
     # Load data
     def data(): 
-        df_train = pd.read_csv('./train_cleaned.csv')
+        df_train = pd.read_csv('/train_cleaned.csv')
         return df_train
     
     df_train = data()
