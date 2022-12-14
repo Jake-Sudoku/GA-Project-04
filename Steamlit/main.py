@@ -51,17 +51,10 @@ elif choose == "Slides":
 
 
 elif choose == "Interactive":
-    @st.cache
+    
     # Load data
-    def data_train(): 
-        df = pd.read_csv('traincleaned.csv')
-        return df
-    def data_spray(): 
-        df = pd.read_csv('spraycleaned.csv')
-        return df
-
-    df_train=data_train()
-    df_spray=data_spray()
+    df_train = pd.read_csv('traincleaned.csv')
+    df_spray = pd.read_csv('spraycleaned.csv')
 
     #Spray Locations from 2011-2013
     MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
