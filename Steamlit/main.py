@@ -46,23 +46,20 @@ elif choose == "Slides":
         with open(file_path,"rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode('utf-8')
             pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
-    st.markdown(pdf_display, unsafe_allow_html=True)
-
-    show_pdf('test-GA-Project-4.pdf')
+            st.markdown(pdf_display, unsafe_allow_html=True)
+            show_pdf('testGAProject4.pdf')
 
 
 elif choose == "Interactive":
-    @st.cache
+    
     # Load data
-    def data_train(): 
-        df = pd.read_csv('train_cleaned.csv')
-        return df
-    def data_spray(): 
-        df = pd.read_csv('spray_cleaned.csv')
-        return df
-
-    df_train=data_train()
-    df_spray=data_spray()
+    def data(): 
+        df_train = pd.read_csv('/train_cleaned.csv')
+        return df_train
+    
+    df_train = data()
+    #df_train = pd.read_csv("traincleaned.csv")
+    df_spray = pd.read_csv("spraycleaned.csv")
 
     #Spray Locations from 2011-2013
     MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
