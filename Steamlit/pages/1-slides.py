@@ -19,4 +19,4 @@ def show_pdf(file_path):
         pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
         st.markdown(pdf_display, unsafe_allow_html=True)
 
-show_pdf('test-GA-Project-4.pdf')
+show_pdf('./test-GA-Project-4.pdf')
