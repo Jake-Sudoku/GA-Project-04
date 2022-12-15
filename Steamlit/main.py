@@ -63,7 +63,7 @@ if choose == "About👨👩👨👩👨":
     font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
     </style> """, unsafe_allow_html=True)
     st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
-    st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \n\nDSI33 Group Members : \n\n👨Tan Ming Jie \n\n👨Liam Ting Wei👨 \n\n👩Maryam \n\n👩Priscilla Ong \n\n👨Jimmy Ong")    
+    st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \n\nDSI33 Group Members : \n\n👨Tan Ming Jie \n\n👨Liam Ting Wei \n\n👩Maryam \n\n👩Priscilla Ong \n\n👨Jimmy Ong")    
     #st.image(profile, width=700 )
 
 #The Mosquito cluster page
