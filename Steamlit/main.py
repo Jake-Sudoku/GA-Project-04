@@ -47,7 +47,7 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 with st.sidebar:
-    choose = option_menu("Directory",[ "About","Slides", "Interactive"],
+    choose = option_menu("Directory",[ "About","Mosquito Clusters", "Spray"],
                          icons=['people', 'file earmark slides', 'bar-chart'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
@@ -67,18 +67,8 @@ if choose == "About":
     st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \n\nDSI33 Group Members : \n\nTan Ming Jie \n\nLiam Ting Wei \n\nMaryam \n\nPriscilla Ong \n\nJimmy Ong")    
     #st.image(profile, width=700 )
 
-#The "Slides" page
-elif choose == "Slides":
-    def show_pdf(file_path):
-        with open(file_path,"rb") as f:
-            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
-            st.markdown(pdf_display, unsafe_allow_html=True)
-
-    show_pdf(slides_pdf)
-
-
-elif choose == "Interactive":
+#The Mosquito cluster page
+elif choose == "Mosquito Clusters":
     fig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
                             size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                             hover_data = ['nummosquitos', 'wnvpresent'],
@@ -87,3 +77,17 @@ elif choose == "Interactive":
 
     fig.show()
     st.plotly_chart(fig, use_container_width=True)
+
+#
+elif choose == "Spray":
+    fig1 = px.scatter_mapbox(df_spray, lat = 'latitude', lon  = 'longitude',
+                        size_max=15, zoom = 9,color_discrete_sequence=["olive"],  opacity = 0.5,mapbox_style="light")
+
+    fig2 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
+                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Twilight,
+                        hover_data = ['nummosquitos', 'wnvpresent'])
+
+    fig1.add_trace(fig2.data[0],)
+
+    fig.update_layout( title = 'Spray relationship with Virus and Mosquito clusters')
+    st.plotly_chart(fig1, use_container_width=True)
