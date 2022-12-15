@@ -6,7 +6,6 @@ import time
 import plotly.express as px
 from plotly.offline import iplot
 from  PIL import Image
-import cv2
 import io
 import base64
 
