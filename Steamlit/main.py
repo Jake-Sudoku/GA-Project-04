@@ -17,7 +17,6 @@ from pathlib import Path
 #Path finder
 df_train_csv = Path(__file__).parents[0] / '00-Datasets/train_cleaned.csv'
 df_spray_csv = Path(__file__).parents[0] / '00-Datasets/spray_cleaned.csv'
-slides_pdf = Path(__file__).parents[0] / 'test-GA-Project-4.pdf'
 
 #Load data
 df_train = pd.read_csv(df_train_csv)
@@ -51,7 +50,7 @@ with st.sidebar:
                          icons=['people', 'bar-chart', 'bar-chart'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
-        "container": {"padding": "5!important", "background-color": "#fafafa"},
+        "container": {"padding": "5!important", "background-color": "#000000"},
         "icon": {"color": "orange", "font-size": "25px"}, 
         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#000000"},
         "nav-link-selected": {"background-color": "#02ab21"},
