@@ -31,61 +31,22 @@ with st.sidebar:
     }
     )
 
-#The "About" page
-if choose == "About":
-    st.markdown(""" <style> .font {
-    font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
-    </style> """, unsafe_allow_html=True)
-    st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
-    st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \nIt consist of the following sections below : \n\nAbout \n\nSlides \n\nInteractive")    
-    #st.image(profile, width=700 )
 
-#The "Slides" page
-elif choose == "Slides":
-    def show_pdf(file_path):
-        with open(file_path,"rb") as f:
-            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
-            st.markdown(pdf_display, unsafe_allow_html=True)
-            show_pdf('testGAProject4.pdf')
+# Load data
+df_train = pd.read_csv("traincleaned.csv")
+df_spray = pd.read_csv("spraycleaned.csv")
 
+#Spray Locations from 2011-2013
+MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
+px.set_mapbox_access_token(MAPBOX_TOKEN)
+fig = px.scatter_mapbox(df_spray, lat = 'latitude', lon  = 'longitude',animation_frame="date",size_max=15, zoom = 10)
 
-elif choose == "Interactive":
+fig.update_layout(title = 'Spray Locations from 2011-2013',
+                  autosize=False,
+                  width=500,
+                  height=700,
+                  mapbox_accesstoken=MAPBOX_TOKEN,mapbox_style="light")
+fig.show()
+st.plotly_chart(fig, use_container_width=True)
     
-    # Load data
-    def data(): 
-        df_train = pd.read_csv('/train_cleaned.csv')
-        return df_train
-    
-    df_train = data()
-    #df_train = pd.read_csv("traincleaned.csv")
-    df_spray = pd.read_csv("spraycleaned.csv")
-
-    #Spray Locations from 2011-2013
-    MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
-    px.set_mapbox_access_token(MAPBOX_TOKEN)
-    fig = px.scatter_mapbox(df_spray, lat = 'latitude', lon  = 'longitude',animation_frame="date",size_max=15, zoom = 10)
-
-    fig.update_layout(title = 'Spray Locations from 2011-2013',
-                      autosize=False,
-                      width=500,
-                      height=700,
-                      mapbox_accesstoken=MAPBOX_TOKEN,mapbox_style="light")
-
-    fig.show()
-    st.plotly_chart(fig, use_container_width=True)
-    
-    
-    #Traps Locations from 2007-2013
-    MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
-    px.set_mapbox_access_token(MAPBOX_TOKEN)
-    fig = px.scatter_mapbox(df_train, lat = 'latitude', lon  = 'longitude',animation_frame="date",size_max=15, zoom = 10)
-
-    fig.update_layout(title = 'Traps Locations from 2007-2013',
-    autosize=False,
-    width=500,
-    height=700,)
-
-    fig.show()
-    st.plotly_chart(fig, use_container_width=True)
     
