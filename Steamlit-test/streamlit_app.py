@@ -20,19 +20,6 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 
-with st.sidebar:
-    choose = option_menu("Directory",[ "About","Slides", "Interactive"],
-                         icons=['people', 'file earmark slides', 'bar-chart'],
-                         menu_icon="app-indicator", default_index=0,
-                         styles={
-        "container": {"padding": "5!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#02ab21"},
-    }
-    )
-
-
 st.markdown(""" <style> .font {
 font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
  </style> """, unsafe_allow_html=True)
