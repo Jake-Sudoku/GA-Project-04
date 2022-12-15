@@ -83,7 +83,7 @@ elif choose == "Spraying Effectiveness🦟☠️☠️":
                         size_max=15, zoom = 9,color_discrete_sequence=["olive"],  opacity = 0.5,mapbox_style="light")
 
     fig2 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
-                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Twilight,
+                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                         hover_data = ['nummosquitos', 'wnvpresent'])
 
     fig1.add_trace(fig2.data[0],)
