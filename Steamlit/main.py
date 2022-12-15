@@ -46,17 +46,6 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 # Set title of the app
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
-#What to display
-st.markdown(""" <style> .font {
-font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
- </style> """, unsafe_allow_html=True)
-st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
-st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \n\nDSI33 Group Members : \n\nTan Ming Jie \n\nLiam Ting Wei \n\nMaryam \n\nPriscilla Ong \n\nJimmy Ong")    
-
-
-# Set title of the app
-st.title('🦟💀 Project 4 - West Nile Virus Prediction')
-
 with st.sidebar:
     choose = option_menu("Directory",[ "About","Slides", "Interactive"],
                          icons=['people', 'file earmark slides', 'bar-chart'],
@@ -84,7 +73,7 @@ elif choose == "Slides":
         with open(file_path,"rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode('utf-8')
             pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
-    st.markdown(pdf_display, unsafe_allow_html=True)
+            st.markdown(pdf_display, unsafe_allow_html=True)
 
     show_pdf(slides_pdf)
 
@@ -98,6 +87,3 @@ elif choose == "Interactive":
 
     fig.show()
     st.plotly_chart(fig, use_container_width=True)
- 
- 
-    
