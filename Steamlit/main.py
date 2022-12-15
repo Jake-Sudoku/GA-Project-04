@@ -89,5 +89,5 @@ elif choose == "Spray":
 
     fig1.add_trace(fig2.data[0],)
 
-    fig.update_layout( title = 'Spray relationship with Virus and Mosquito clusters')
+    fig1.update_layout( title = 'Spray relationship with Virus and Mosquito clusters')
     st.plotly_chart(fig1, use_container_width=True)
