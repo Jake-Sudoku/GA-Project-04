@@ -46,7 +46,7 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 with st.sidebar:
-    choose = option_menu("Directory",[ "About👦👩👨👩👨","🦟🦟🦟Mosquito Clusters🦟🦟🦟", "☠️🦟Spray🦟☠️"],
+    choose = option_menu("Directory",[ "About👨👩👨👩👨","🦟🦟🦟Mosquito Clusters🦟🦟🦟", "☠️🦟Spray🦟☠️"],
                          icons=['people', 'bar-chart', 'bar-chart'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
@@ -58,12 +58,12 @@ with st.sidebar:
     )
 
 #The "About" page
-if choose == "About👦👩👨👩👨":
+if choose == "About👨👩👨👩👨":
     st.markdown(""" <style> .font {
     font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
     </style> """, unsafe_allow_html=True)
     st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
-    st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \n\nDSI33 Group Members : \n\nTan Ming Jie👦 \n\nLiam Ting Wei👨 \n\nMaryam👩 \n\nPriscilla Ong👩 \n\nJimmy Ong👨")    
+    st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \n\nDSI33 Group Members : \n\n👨Tan Ming Jie \n\n👨Liam Ting Wei👨 \n\n👩Maryam \n\n👩Priscilla Ong \n\n👨Jimmy Ong")    
     #st.image(profile, width=700 )
 
 #The Mosquito cluster page
