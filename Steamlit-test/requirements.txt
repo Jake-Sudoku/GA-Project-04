@@ -3,6 +3,6 @@ streamlit
 matplotlib
 seaborn
 pandas 
-plotly
+plotly==5.4.0
 streamlit_option_menu
 opencv-python-headless
