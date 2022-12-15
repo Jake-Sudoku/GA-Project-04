@@ -28,39 +28,24 @@ df_spray_csv = Path(__file__).parents[0] / 'spray_cleaned.csv'
 df_train = pd.read_csv(df_train_csv)
 df_spray = pd.read_csv(df_spray_csv)
 
-#Number of Mosquitos in areas with wnvpresent
+#Spray relationship with Virus and Mosquito clusters
 MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
 px.set_mapbox_access_token(MAPBOX_TOKEN)
 
-#Count the number of mosquitos in areas
-mosquito_count = df_train.groupby(['address'], as_index = False)[['nummosquitos']].sum()
-#Group the area by address and use the median address
-areas = df_train.groupby(['address'], as_index = False)[['latitude','longitude']].median()
+fig = px.scatter_mapbox(df_spray, lat = 'latitude', lon  = 'longitude',
+                        size_max=15, zoom = 9,color_discrete_sequence=["olive"],  opacity = 0.5,
+                        width=500,
+                       height=700)
 
-#Group the wnvpresent by address
-wnv = df_train.groupby(['address'], as_index = False)[['wnvpresent']].sum() 
-
-#Merge mosquitocount , areas and wnvpresent together
-mosquito_areas_wnv = pd.concat([mosquito_count,areas, wnv], axis = 1)
-
-#Drop the address as it is not required
-mosquito_areas_wnv.drop('address', axis = 1, inplace = True)
-
-fig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
+fig2 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
                         size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                         hover_data = ['nummosquitos', 'wnvpresent'],
-                       zoom = 9,mapbox_style="light",
-                       title="Number of Mosquitos in areas with wnvpresent")
+                       zoom = 9,
+                       width=500,
+                       height=700)
 
-fig.show()
-st.plotly_chart(fig, use_container_width=True)
+fig.add_trace(fig2.data[0],)
 
-fig1 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
-                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
-                        hover_data = ['nummosquitos', 'wnvpresent'],
-                       zoom = 9,mapbox_style="open-street-map",
-                       title="Number of Mosquitos in areas with wnvpresent")
-
-fig1.show()
+fig.update_layout( title = 'Spray relationship with Virus and Mosquito clusters')
 st.plotly_chart(fig1, use_container_width=True)
     
