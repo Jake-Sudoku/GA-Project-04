@@ -72,7 +72,7 @@ elif choose == "Mosquito Clusters🦟🦟🦟":
                             size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                             hover_data = ['nummosquitos', 'wnvpresent'],
                            zoom = 9,mapbox_style="light",
-                           title="Number of Mosquitos in areas with wnvpresent")
+                           title="Mosquito Clusters🦟🦟🦟")
 
     fig.show()
     st.plotly_chart(fig, use_container_width=True)
@@ -88,5 +88,5 @@ elif choose == "Spraying Effectiveness🦟☠️☠️":
 
     fig1.add_trace(fig2.data[0],)
 
-    fig1.update_layout( title = 'Spray relationship with Virus and Mosquito clusters')
+    fig1.update_layout( title = 'Spraying Effectiveness🦟☠️☠️')
     st.plotly_chart(fig1, use_container_width=True)
