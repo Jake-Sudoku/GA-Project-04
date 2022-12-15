@@ -50,7 +50,7 @@ fig = px.scatter_mapbox(df_spray, lat = 'latitude', lon  = 'longitude',
                         size_max=15, zoom = 9,color_discrete_sequence=["olive"],  opacity = 0.5)
 
 fig2 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
-                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
+                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.IceFire,
                         hover_data = ['nummosquitos', 'wnvpresent'],mapbox_style="light")
 
 fig.add_trace(fig2.data[0],)
