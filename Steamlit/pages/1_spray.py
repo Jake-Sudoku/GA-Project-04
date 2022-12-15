@@ -22,7 +22,7 @@ st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 # Load data
 df_train_csv = Path(__file__).parents[0] / '00-Datasets/train_cleaned.csv'
-df_spray_csv = Path(__file__).parents[0] / 'spray_cleaned.csv'
+df_spray_csv = Path(__file__).parents[0] / '00-Datasets/spray_cleaned.csv'
 
 # Load data
 df_train = pd.read_csv(df_train_csv)
