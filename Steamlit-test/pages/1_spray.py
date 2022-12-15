@@ -20,13 +20,9 @@ st.set_page_config(page_title='Number of Mosquitos in areas with wnvpresent', pa
 # Set title of the app
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
-
-
-
 # Load data
 df_train_csv = Path(__file__).parents[0] / 'train_cleaned.csv'
 df_spray_csv = Path(__file__).parents[0] / 'spray_cleaned.csv'
-
 
 # Load data
 df_train = pd.read_csv(df_train_csv)
@@ -53,12 +49,18 @@ mosquito_areas_wnv.drop('address', axis = 1, inplace = True)
 fig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
                         size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                         hover_data = ['nummosquitos', 'wnvpresent'],
-                       zoom = 9,
-                       width=500,
-                       height=700,
+                       zoom = 9,mapbox_accesstoken=MAPBOX_TOKEN,mapbox_style="light"
                        title="Number of Mosquitos in areas with wnvpresent")
 
 fig.show()
 st.plotly_chart(fig, use_container_width=True)
-    
+
+ig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
+                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
+                        hover_data = ['nummosquitos', 'wnvpresent'],
+                       zoom = 9,mapbox_accesstoken=MAPBOX_TOKEN,mapbox_style="open-street-map"
+                       title="Number of Mosquitos in areas with wnvpresent")
+
+fig.show()
+st.plotly_chart(fig, use_container_width=True)
     
