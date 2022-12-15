@@ -39,20 +39,6 @@ font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;}
 st.markdown('<p class="font">About</p>', unsafe_allow_html=True)
 st.write("This project is done to as part of General's Assembly (GA) requirement to pass the course. \nOur Group Members : \n\nTan Ming Jie \n\nLiam Ting Wei \n\nMaryam \n\nPriscilla Ong \n\nJimmy Ong")    
  #st.image(profile, width=700 )
-
-# Contents of streamlit_app.py
-import streamlit as st
-
-def main_page():
-    st.markdown("# About 🎈")
-    st.sidebar.markdown("# About 🎈")
-
-def page2():
-    st.markdown("# Spray ❄️")
-    st.sidebar.markdown("# Spray ❄️")
-
-def page3():
-    st.markdown("# Page 3 🎉")
     st.sidebar.markdown("# Page 3 🎉")
 
 page_names_to_funcs = {
