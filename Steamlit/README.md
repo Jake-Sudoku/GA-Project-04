@@ -1,4 +1,4 @@
-# [West Nile Virus web app with Streamlit](https://jake-sudoku-ga-project-04-steamlitmain-i1gmmq.streamlit.app/)
+# [West Nile Virus app with Streamlit](https://dsi33-project4-group2.streamlit.app/)
 
 GA DSI33 project 4
 
