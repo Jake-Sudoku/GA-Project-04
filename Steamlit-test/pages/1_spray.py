@@ -20,9 +20,15 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 
+from pathlib import Path
+
+df_train = Path(__file__).parents[0] / 'train_cleaned.csv'
+df_spray = Path(__file__).parents[0] / 'spray_cleaned.csv'
+
+
 # Load data
-df_train = pd.read_csv("traincleaned.csv")
-df_spray = pd.read_csv("spraycleaned.csv")
+#df_train = pd.read_csv("train_cleaned.csv")
+#df_spray = pd.read_csv("spray_cleaned.csv")
 
 #Spray Locations from 2011-2013
 MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
