@@ -56,5 +56,5 @@ fig2 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude
 fig.add_trace(fig2.data[0],)
 
 fig.update_layout( title = 'Spray relationship with Virus and Mosquito clusters')
-st.plotly_chart(fig1, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True)
     
