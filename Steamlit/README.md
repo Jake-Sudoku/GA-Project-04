@@ -1,14 +1,18 @@
-# West Nile Virus web app using [Streamlit](https://streamlit.io/)
+# West Nile Virus web app using Streamlit
 For GA DSI33 project 4
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://yxmauw-west-nile-virus-simulation.streamlitapp.com/)
+Group members : 
+<br>
+Tan Ming Jie
+<br>
+Liam Ting Wei
+<br>
+Maryam
+<br>
+Priscilla Ong
+<br>
+Jimmy Ong
+<br>
 
-```
-App structure
-├── main.py (main page)
-    ├── wnv_density.py (page 2)
-```    
-```
-```
 
 
