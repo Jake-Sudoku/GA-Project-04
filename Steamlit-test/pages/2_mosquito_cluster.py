@@ -54,12 +54,3 @@ fig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude'
 
 fig.show()
 st.plotly_chart(fig, use_container_width=True)
-
-fig1 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
-                        size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
-                        hover_data = ['nummosquitos', 'wnvpresent'],
-                       zoom = 9,mapbox_style="open-street-map",
-                       title="Number of Mosquitos in areas with wnvpresent")
-
-fig1.show()
-st.plotly_chart(fig1, use_container_width=True)
