@@ -28,6 +28,20 @@ df_spray_csv = Path(__file__).parents[0] / 'spray_cleaned.csv'
 df_train = pd.read_csv(df_train_csv)
 df_spray = pd.read_csv(df_spray_csv)
 
+#Count the number of mosquitos in areas
+mosquito_count = df_train.groupby(['address'], as_index = False)[['nummosquitos']].sum()
+#Group the area by address and use the median address
+areas = df_train.groupby(['address'], as_index = False)[['latitude','longitude']].median()
+
+#Group the wnvpresent by address
+wnv = df_train.groupby(['address'], as_index = False)[['wnvpresent']].sum() 
+
+#Merge mosquitocount , areas and wnvpresent together
+mosquito_areas_wnv = pd.concat([mosquito_count,areas, wnv], axis = 1)
+
+#Drop the address as it is not required
+mosquito_areas_wnv.drop('address', axis = 1, inplace = True)
+
 #Spray relationship with Virus and Mosquito clusters
 MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
 px.set_mapbox_access_token(MAPBOX_TOKEN)
