@@ -33,16 +33,11 @@ MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYyc
 px.set_mapbox_access_token(MAPBOX_TOKEN)
 
 fig = px.scatter_mapbox(df_spray, lat = 'latitude', lon  = 'longitude',
-                        size_max=15, zoom = 9,color_discrete_sequence=["olive"],  opacity = 0.5,
-                        width=500,
-                       height=700)
+                        size_max=15, zoom = 9,color_discrete_sequence=["olive"],  opacity = 0.5)
 
 fig2 = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
                         size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
-                        hover_data = ['nummosquitos', 'wnvpresent'],
-                       zoom = 9,
-                       width=500,
-                       height=700)
+                        hover_data = ['nummosquitos', 'wnvpresent'])
 
 fig.add_trace(fig2.data[0],)
 
