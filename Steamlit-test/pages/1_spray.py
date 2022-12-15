@@ -30,7 +30,7 @@ df_spray_csv = Path(__file__).parents[0] / 'spray_cleaned.csv'
 
 # Load data
 df_train = pd.DataFrame(df_train_csv)
-#df_spray = pd.read_csv("spray_cleaned.csv")
+df_spray = pd.DataFrame(df_spray_csv)
 
 #Spray Locations from 2011-2013
 MAPBOX_TOKEN = 'pk.eyJ1IjoibWFyaWVkcmV6IiwiYSI6ImNsOXl5dTFtZjAyYm4zd28zN3Y1ZzYycm0ifQ.W1Toe6X5S9AELY56h0OQDw'
