@@ -11,6 +11,7 @@ from  PIL import Image
 import cv2
 import io
 import base64
+from pathlib import Path
 
 # Set Page configuration
 # Read more at https://docs.streamlit.io/1.6.0/library/api-reference/utilities/st.set_page_config
@@ -20,14 +21,15 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 
-from pathlib import Path
-
-df_train = Path(__file__).parents[0] / 'train_cleaned.csv'
-df_spray = Path(__file__).parents[0] / 'spray_cleaned.csv'
 
 
 # Load data
-#df_train = pd.read_csv("train_cleaned.csv")
+df_train_csv = Path(__file__).parents[0] / 'train_cleaned.csv'
+df_spray_csv = Path(__file__).parents[0] / 'spray_cleaned.csv'
+
+
+# Load data
+df_train = pd.DataFrame(df_train_csv)
 #df_spray = pd.read_csv("spray_cleaned.csv")
 
 #Spray Locations from 2011-2013
