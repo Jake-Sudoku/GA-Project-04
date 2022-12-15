@@ -49,7 +49,7 @@ mosquito_areas_wnv.drop('address', axis = 1, inplace = True)
 fig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
                         size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                         hover_data = ['nummosquitos', 'wnvpresent'],
-                       zoom = 9,mapbox_accesstoken=MAPBOX_TOKEN,mapbox_style="light",
+                       zoom = 9,mapbox_style="light",
                        title="Number of Mosquitos in areas with wnvpresent")
 
 fig.show()
@@ -58,7 +58,7 @@ st.plotly_chart(fig, use_container_width=True)
 ig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
                         size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                         hover_data = ['nummosquitos', 'wnvpresent'],
-                       zoom = 9,mapbox_accesstoken=MAPBOX_TOKEN,mapbox_style="open-street-map",
+                       zoom = 9,mapbox_style="open-street-map",
                        title="Number of Mosquitos in areas with wnvpresent")
 
 fig.show()
