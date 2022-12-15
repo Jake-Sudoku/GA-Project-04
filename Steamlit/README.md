@@ -1,18 +1,17 @@
-# West Nile Virus web app using Streamlit
-For GA DSI33 project 4
+# [West Nile Virus web app with Streamlit](https://jake-sudoku-ga-project-04-steamlitmain-i1gmmq.streamlit.app/)
+
+GA DSI33 project 4
 
 Group members : 
 <br>
-Tan Ming Jie
+👨Tan Ming Jie
 <br>
-Liam Ting Wei
+👨Liam Ting Wei
 <br>
-Maryam
+👩Maryam
 <br>
-Priscilla Ong
+👩Priscilla Ong
 <br>
-Jimmy Ong
+👨Jimmy Ong
 <br>
-
-
 
