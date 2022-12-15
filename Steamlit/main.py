@@ -47,7 +47,7 @@ st.set_page_config(page_title='Project 4 - West Nile Virus Prediction', page_ico
 st.title('🦟💀 Project 4 - West Nile Virus Prediction')
 
 with st.sidebar:
-    choose = option_menu("Directory",[ "About","Mosquito Clusters", "Spray"],
+    choose = option_menu("Directory",[ "About👦👨👨👩👩","🦟🦟🦟Mosquito Clusters🦟🦟🦟", "☠️🦟Spray🦟☠️"],
                          icons=['people', 'file earmark slides', 'bar-chart'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
@@ -59,7 +59,7 @@ with st.sidebar:
     )
 
 #The "About" page
-if choose == "About":
+if choose == "About👦👨👨👩👩":
     st.markdown(""" <style> .font {
     font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
     </style> """, unsafe_allow_html=True)
@@ -68,7 +68,7 @@ if choose == "About":
     #st.image(profile, width=700 )
 
 #The Mosquito cluster page
-elif choose == "Mosquito Clusters":
+elif choose == "🦟🦟🦟Mosquito Clusters🦟🦟🦟":
     fig = px.scatter_mapbox(mosquito_areas_wnv, lat = 'latitude', lon  = 'longitude', color = 'wnvpresent',
                             size = 'nummosquitos', color_continuous_scale=px.colors.cyclical.Edge,
                             hover_data = ['nummosquitos', 'wnvpresent'],
@@ -79,7 +79,7 @@ elif choose == "Mosquito Clusters":
     st.plotly_chart(fig, use_container_width=True)
 
 #
-elif choose == "Spray":
+elif choose == "☠️🦟Spray🦟☠️":
     fig1 = px.scatter_mapbox(df_spray, lat = 'latitude', lon  = 'longitude',
                         size_max=15, zoom = 9,color_discrete_sequence=["olive"],  opacity = 0.5,mapbox_style="light")
 
