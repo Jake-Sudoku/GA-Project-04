@@ -14,7 +14,7 @@ Recall score is used as a measure of model performance in terms of correctly ide
 
 Optimizing for recall allows us to use the model to reduce the number of areas to spray while ensuring that we have a low miss rate on areas that actually have the West Nile Virus present. This is in line with the huge benefits that mosquito control has in terms of reducing various costs; from lost labor due to sick days up to massive medical costs and loss of life from potentially serious complications.
 
-Random Forest emerged as the best model (Recall = 0.80) over the others in terms of test recall score. Random Forest cleared the benchmark KNN model (Recall = 0.25) by a large margin as well. While the other models built seemed to perform better in train and cross validation, their performance dips sorely on the test set, suggesting gross overfitting. These were hence not selected.
+Random Forest emerged as the best model (Recall = 0.83) over the others in terms of test recall score. Random Forest cleared the benchmark KNN model (Recall = 0.25) by a large margin as well. While the other models built seemed to perform better in train and cross validation, their performance dips sorely on the test set, suggesting gross overfitting. These were hence not selected.
 
 
 |Model|Train Recall|Test Recall|
@@ -67,7 +67,7 @@ Taking into consideration the various costs and benefits of an effective sprayin
 
 In its current iteration, the seasonal mosquito spraying program in Chicago is already highly beneficial, particularly when compared to its cost. However, spraying efforts can be further streamlined to reduce direct costs.
 
-Rather than the current spray and pray method, using our model as a guide to decide on spraying areas on demand can help to reduce costs by preventing overspraying. A Recall score of 0.80 implies that the model is quite capable in ensuring that areas with WNV are not missed. While the model isn't particularly high on precision, the extra cost of a false positive (extra spraying) is much lower than that of a false negative.
+Rather than the current spray and pray method, using our model as a guide to decide on spraying areas on demand can help to reduce costs by preventing overspraying. A Recall score of 0.83 implies that the model is quite capable in ensuring that areas with WNV are not missed. While the model isn't particularly high on precision, the extra cost of a false positive (extra spraying) is much lower than that of a false negative.
 
 # Recommendations
 
